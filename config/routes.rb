@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   mount ActionCable.server => "/cable"
 
   get '/guides/select'
+  get '/guides/maps'
+  get '/users/sign_in'
 end
