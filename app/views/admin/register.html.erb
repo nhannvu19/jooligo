@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Jooligo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="/layout/styles/layout.css" type="text/css" />
+<style>
+        @import url(http://fonts.googleapis.com/css?family=Roboto:400);
+        body {
+          background-color:#fff;
+          -webkit-font-smoothing: antialiased;
+          font: normal 14px Roboto,arial,sans-serif;
+        }
+        
+        .container {
+            padding: 25px;
+            position: fixed;
+        }
+        
+        .form-login {
+            background-color: #EDEDED;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 15px;
+            border-color:#d2d2d2;
+            border-width: 5px;
+            box-shadow:0 1px 0 #cfcfcf;
+        }
+        
+        h4 { 
+         border:0 solid #fff; 
+         border-bottom-width:1px;
+         padding-bottom:10px;
+         text-align: center;
+        }
+        
+        .form-control {
+            border-radius: 10px;
+        }
+        
+        .wrapper {
+            text-align: center;
+        }
+        
+</style>
+</head>
+<body id="top">
+
+<div class="wrapper col2">
+  <div id="header">
+    <div id="topnav">
+      <ul>
+        <li><a href="/admin/sign_out">Đăng xuất</a></li>
+        <li class="active" ><a href="">Đăng kí đối tác</a></li>
+        <li><a href="full-width.html">Duyệt chổ ở</a></li>
+        <li ><a href="/admin/administrator">Duyệt bài</li>
+      </ul>
+    </div>
+    <div id="logo">
+      <h1><a href="/index.html">Jooligo</a></h1>
+      <p>administrator permission</p>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<div class="wrapper col4">
+    <section id="cover">
+            <div id="cover-caption">
+                <div id="container" class="container">
+                    <div class="row">
+                        <div class="col-sm-8 mx-auto text-center">
+                            <div class="info-form">
+                                    <div class="form-login">
+                                        <form action="/admin/login" method="POST">
+                                            <h4>Đăng kí đối tác</h4>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <input type="text" name="user" class="form-control input-sm chat-input" placeholder="Tên tối tác" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                   <input type="number" name="user" class="form-control input-sm chat-input" placeholder="Chứng minh thư" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                   <input type="text" name="user" class="form-control input-sm chat-input" placeholder="Địa chỉ" />
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <input type="number" name="user" class="form-control input-sm chat-input" placeholder="Số điện thoại" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                   <select class="form-control">
+                                                       <option>Chọn bằng cấp</option>
+                                                       <option>Đại học</option>
+                                                       <option>Cao đẳng</option>
+                                                       <option>Trung cấp</option>
+                                                       <option>THPT</option>
+                                                       <option>Tự do</option>
+                                                   </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                   <input type="text" name="user" class="form-control input-sm chat-input" placeholder="Upload avatar" />
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <input type="text" name="user" class="form-control input-sm chat-input" placeholder="Email" />
+                                                </div>
+                                                <div class="col-md-4">
+                                                   <input type="password" name="user" class="form-control input-sm chat-input" placeholder="Mật khẩu" />
+                                                </div>
+                                            </div>
+                                            </br>
+                                            <div class="wrapper">
+                                            <span class="group-btn">     
+                                                <button class="btn btn-success btn-sm">Đăng kí <i class="fa fa-sign-in"></i></button>
+                                            </span>
+                                            </div>
+                                            <div id="flash">
+                                                    <% flash.each do |name, msg| %>
+                                                    <%= content_tag :div, msg, class: name %>
+                                                    <% end %>
+                                            </div>
+                                        </form>
+                                    </div>
+                            </div>
+                            <br>           
+                            <a href="#nav-main" class="btn btn-secondary-outline btn-sm" role="button">↓</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>  
+</div>
+<div class="wrapper col5">
+  <div id="footer">
+    <div id="newsletter">
+      <h2>Liên hệ với chúng tôi</h2>
+      <p>Nhập email của bạn để chúng tôi liên hệ</p>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>News Letter</legend>
+          <input type="text" placeholder="Nhập email của bạn" />
+          <input type="submit" name="news_go" id="news_go" value="Gửi" />
+        </fieldset>
+      </form>
+      <p>Để biết thêm thông tin liên lạc nhấp<a href="#">vào đây &raquo;</a></p>
+    </div>
+    <div class="footbox">
+      <h2>Về Jooligo</h2>
+      <ul>
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Design</a></li>
+      </ul>
+    </div>
+    <div class="footbox">
+      <h2>Hổ trợ khách du lịch</h2>
+      <ul>
+        <li><a href="#">Trung tâm trợ giúp</a></li>
+        <li><a href="#">An toàn du lịch</a></li>
+        <li><a href="#">Quy định cần biết</a></li>
+        <li><a href="#">Liên hệ hổ trợ</a></li>
+      </ul>
+    </div>
+    <div class="footbox">
+      <h2>Liên kết</h2>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Gmail</a></li>
+        <li><a href="#">Skype</a></li>
+      </ul>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<div class="wrapper col6">
+  <div id="copyright">
+    <p class="fl_left">Copyright &copy; 2017 - TON DUC THANG UNIVERSITY</p>
+    <p class="fl_right">Design by Team TDTU <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <br class="clear" />
+  </div>
+</div>
+</body>
+</html>

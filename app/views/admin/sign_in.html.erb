@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Jooligo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="/layout/styles/layout.css" type="text/css" />
+<style>
+        @import url(http://fonts.googleapis.com/css?family=Roboto:400);
+        body {
+          background-color:#fff;
+          -webkit-font-smoothing: antialiased;
+          font: normal 14px Roboto,arial,sans-serif;
+        }
+        
+        .container {
+            padding: 25px;
+            position: fixed;
+        }
+        
+        .form-login {
+            background-color: #EDEDED;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 15px;
+            border-color:#d2d2d2;
+            border-width: 5px;
+            box-shadow:0 1px 0 #cfcfcf;
+        }
+        
+        h4 { 
+         border:0 solid #fff; 
+         border-bottom-width:1px;
+         padding-bottom:10px;
+         text-align: center;
+        }
+        
+        .form-control {
+            border-radius: 10px;
+        }
+        
+        .wrapper {
+            text-align: center;
+        }
+        
+</style>
+</head>
+<body id="top">
+<div class="wrapper col2">
+  <div id="header">
+    <div id="logo">
+      <h1><%= link_to  "Jooligo", posts_path %></h1>
+      <p>administrator permission</p>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<div class="wrapper col4">
+    <section id="cover">
+            <div id="cover-caption">
+                <div id="container" class="container">
+                    <div class="row">
+                        <div class="col-sm-5 mx-auto text-center">
+                            <div class="info-form">
+                                    <div class="form-login">
+                                        <form action="/admin/login" method="POST">
+                                            <h4>Đăng nhập với quyền Admin</h4>
+                                            <input type="text" name="user" class="form-control input-sm chat-input" placeholder="Tên tài khoản" />
+                                            </br>
+                                            <input type="password" name="pass" class="form-control input-sm chat-input" placeholder="Mật khẩu" />
+                                            </br>
+                                            <div class="wrapper">
+                                            <span class="group-btn">     
+                                                <button class="btn btn-success btn-sm">Đăng nhập <i class="fa fa-sign-in"></i></button>
+                                            </span>
+                                            </div>
+                                            <div id="flash">
+                                                    <% flash.each do |name, msg| %>
+                                                    <%= content_tag :div, msg, class: name %>
+                                                    <% end %>
+                                            </div>
+                                        </form>
+                                    </div>
+                            </div>
+                            <br>           
+                            <a href="#nav-main" class="btn btn-secondary-outline btn-sm" role="button">↓</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>  
+</div>
+
+<br class="clear" />
+</div>
+</div>
+</body>
+</html>

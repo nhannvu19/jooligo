@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Jooligo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="/layout/styles/layout.css" type="text/css" />
+</head>
+<body id="top">
+
+<div class="wrapper col2">
+  <div id="header">
+    <div id="topnav">
+      <ul>
+        <li><a href="/admin/sign_out">Đăng xuất</a></li>
+        <li><a href="/admin/register">Đăng kí đối tác</a></li>
+        <li><a href="full-width.html">Duyệt chổ ở</a></li>
+        <li class="active" ><a href="/index.html">Duyệt bài</li>
+      </ul>
+    </div>
+    <div id="logo">
+      <h1><a href="/index.html">Jooligo</a></h1>
+      <p>administrator permission</p>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+
+<div class="wrapper col4">
+  <div id="container">
+    <div id="content">
+      <div id="comments">
+        <h2>Bài viết chưa dược duyệt</h2>
+        <ul class="commentlist">
+          <% @post.each do |p| %>
+            <li class="comment_even">
+                <div class="author"><img class="avatar" src="/images/demo/avatar.gif" width="32" height="32" alt="" /><span class="name"><a href="#">Nguyễn thằng công</a></span> <span class="wrote">Đăng:</span></div>
+                <div class="submitdate"><a href="#"><%= p.created_at %></a></div>
+                <div class="row">
+                  <div class="col-md-3">
+                      <%= link_to image_tag(p.thumbnail.url(:med)), p.thumbnail.url %>
+                  </div>
+                  <div class="col-md-9">        
+                      <h3 style="color:black;"><%= p.title %></h3>
+                      <p class="readmore" style="float:right;"><%= link_to  "Xem chi tiết", p %></p>
+                      <form action="">
+                            <a class="btn btn-success btn-sm" href="/posts/censored/<%= p.id %>">Duyệt bài</a>
+                            <a class="btn btn-danger btn-sm" href="/posts/uncensored/<%= p.id %>">Từ chối</a>
+                      </form>
+                  </div>
+                </div>
+            </li>
+          <% end %>    
+        </ul>
+      </div>
+      <div id="container">
+          <div id="content">
+           <h2>Những bài đã duyệt</h2>
+            <table summary="Summary Here" cellpadding="0" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Người đăng</th>
+                  <th>Nội dung</th>
+                  <th>Hành động</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <% @post_censored.each do |p| %>
+                   <tr class="light">
+                      <td><%= p.user.name %></td>
+                      <td><b><%= p.title %></b></td>
+                      <td><a class="btn btn-danger btn-sm" href="/posts/uncensored/<%= p.id %>">Xóa bài</a></td>
+                    </tr>
+                  <% end %>
+              </tbody>
+            </table>
+          </div>
+      </div>
+    </div>
+    <div id="column">
+      <div class="subnav">
+        <h2>Top 5 người dùng có nhiều bài viết nhất</h2>
+        <ul>
+          <li><a href="#">Nguyễn thành công - 150 bài viết</a></li>
+          <li><a href="#">Vũ thành nhân - 123 bài viết</a></li>
+          <li><a href="#">Nguyễn quang duy - 59 bài viết</a></li>
+          <li><a href="#">Trần khánh đăng - 50 bài viết</a></li>
+          <li><a href="#">Nguyễn quang duy - 59 bài viết</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="wrapper col5">
+  <div id="footer">
+    <div id="newsletter">
+      <h2>Liên hệ với chúng tôi</h2>
+      <p>Nhập email của bạn để chúng tôi liên hệ</p>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>News Letter</legend>
+          <input type="text" placeholder="Nhập email của bạn" />
+          <input type="submit" name="news_go" id="news_go" value="Gửi" />
+        </fieldset>
+      </form>
+      <p>Để biết thêm thông tin liên lạc nhấp<a href="#">vào đây &raquo;</a></p>
+    </div>
+    <div class="footbox">
+      <h2>Về Jooligo</h2>
+      <ul>
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Design</a></li>
+      </ul>
+    </div>
+    <div class="footbox">
+      <h2>Hổ trợ khách du lịch</h2>
+      <ul>
+        <li><a href="#">Trung tâm trợ giúp</a></li>
+        <li><a href="#">An toàn du lịch</a></li>
+        <li><a href="#">Quy định cần biết</a></li>
+        <li><a href="#">Liên hệ hổ trợ</a></li>
+      </ul>
+    </div>
+    <div class="footbox">
+      <h2>Liên kết</h2>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Gmail</a></li>
+        <li><a href="#">Skype</a></li>
+      </ul>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<div class="wrapper col6">
+  <div id="copyright">
+    <p class="fl_left">Copyright &copy; 2017 - TON DUC THANG UNIVERSITY</p>
+    <p class="fl_right">Design by Team TDTU <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <br class="clear" />
+  </div>
+</div>
+</body>
+</html>

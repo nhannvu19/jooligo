@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Jooligo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="/layout/styles/layout.css" type="text/css" />
+</head>
+<body id="top">
+<div class="wrapper col2">
+  <div id="header">
+    <div id="topnav">
+      <ul>
+        <li class="last"><a href="#">Link text</a></li>
+        <li><a href="/pages/full-width.html">Đăng bài</a></li>
+        <li><a href="/pages/style-demo.html">Review tour</a></li>
+        <li class="active"><a href="index.html">Trang chủ</a></li>
+      </ul>
+    </div>
+    <div id="logo">
+      <h1><a href="index.html">Jooligo</a></h1>
+      <p>Free Travel</p>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<div class="wrapper col3">
+  <div id="intro">
+    <ul>
+      <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP9Ci0M627pBy1tdBf6rAd2AD_kOgf2V1AUuD4IwZfEUvorIkvqg" alt="" style="height: 259px;width:225px;" /> <a href="#">Thành phố HCM &raquo;</a></li>
+      <li><img src="https://media.foody.vn/images/cac-loai-hinh-du-lich-da-nang-mytour-1(1).jpg" alt="" style="height: 259px;width:225px;" /> <a href="#">Thành phố đà nẵng&raquo;</a></li>
+      <li><img src="https://www.vntrip.vn/cam-nang/wp-content/uploads/2016/01/nha-trang-thap-tram-huong.jpg" alt="" style="height: 259px;width:225px;" /> <a href="#">Thành phố Nha Trang &raquo;</a></li>
+      <li class="last"><img src="http://dacsandalat.com.vn/wp-content/uploads/2017/03/lich-trinh-du-lich-da-lat-12.jpg" alt="" style="height: 259px;width:225px;" /> <a href="#">Thành phố đà lạt &raquo;</a></li>
+    </ul>
+    <br class="clear" />
+  </div>
+</div>
+<div class="wrapper col4">
+  <style>
+  
+    
+  </style>
+  <div id="container">
+     <div id="column">
+      <div class="holder">
+        <h2>Địa điểm du lịch nội bật</h2>
+        <ul id="latestnews">
+         <% @posts_count.each do |random| %>
+         <%= link_to image_tag(random.thumbnail.url(:small)), random.thumbnail.url %>
+            <strong style="color:black;"><%= random.title %></strong>
+            <p class="readmore"><%= link_to  "Xem chi tiết", random %> &raquo;</p>
+          </li>
+         <% end %>
+        </ul>
+      </div>
+    </div>
+   
+    <% @post.each do |p| %>
+    <div id="content">
+      <div class="row">
+        <div class="col-md-4">
+            <%= link_to image_tag(p.thumbnail.url(:large)), p.thumbnail.url %>
+           
+        </div>
+        <div class="col-md-4">
+            <p><strong >Đăng bởi: Nhân vũ</strong></p>
+            <h3><%= p.title %></h3>
+            <p class="readmore"><%= link_to  "Xem chi tiết", p %> &raquo;</p>
+            <hr>
+        </div>
+      </div> 
+    </div>
+    <% end %>
+    <br class="clear" />
+    <div style="margin-top:5px;"><%= paginate @post %></div>
+  </div>
+</div>
+<div class="wrapper col5">
+  <div id="footer">
+    <div id="newsletter">
+      <h2>Liên hệ với chúng tôi</h2>
+      <p>Nhập email của bạn để chúng tôi liên hệ</p>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>News Letter</legend>
+          <input type="text" placeholder="Nhập email của bạn" />
+          <input type="submit" name="news_go" id="news_go" value="Gửi" />
+        </fieldset>
+      </form>
+      <p>Để biết thêm thông tin liên lạc nhấp<a href="#">vào đây &raquo;</a></p>
+    </div>
+    <div class="footbox">
+      <h2>Về Jooligo</h2>
+      <ul>
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Design</a></li>
+      </ul>
+    </div>
+    <div class="footbox">
+      <h2>Hổ trợ khách du lịch</h2>
+      <ul>
+        <li><a href="#">Trung tâm trợ giúp</a></li>
+        <li><a href="#">An toàn du lịch</a></li>
+        <li><a href="#">Quy định cần biết</a></li>
+        <li><a href="#">Liên hệ hổ trợ</a></li>
+      </ul>
+    </div>
+    <div class="footbox">
+      <h2>Liên kết</h2>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Gmail</a></li>
+        <li><a href="#">Skype</a></li>
+      </ul>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<div class="wrapper col6">
+  <div id="copyright">
+    <p class="fl_left">Copyright &copy; 2017 - TON DUC THANG UNIVERSITY</p>
+    <p class="fl_right">Design by Team TDTU <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <br class="clear" />
+  </div>
+</div>
+</body>
+</html>

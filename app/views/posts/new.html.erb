@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Jooligo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="/layout/styles/layout.css" type="text/css" />
+</head>
+<body id="top">
+<div class="wrapper col2">
+  <div id="header">
+    <div id="logo">
+      <h1><%= link_to  "Jooligo", posts_path %></h1>
+      <p>Free Travel</p>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<div class="wrapper col4">
+    <section id="cover">
+            <div id="cover-caption">
+                <div id="container" class="container">
+                    <div class="row">
+                        <div class="col-sm-12 mx-auto text-center">
+                            <div class="info-form">
+                                <%= form_for @post, html: { multipart: true } do |f| %>
+                                        <input type="hidden" value="1" name="id">
+                                        <div class="row">
+                                            <div class="col-md-4 text-left">
+                                               <%= f.text_field :title, class: "form-control", placeholder: "Nhập tiêu đề" %>
+                                            </div>
+                                            <div class="col-md-4 text-left">
+                                            <%= f.submit "Submit", class: "btn btn-success btn-sm" %>
+                                            </div>
+                                            <div class="col-md-12">
+                                            <%= f.cktext_area :content %>
+                                            </div>
+                                            <%= f.file_field :thumbnail %>
+                                        </div>
+                                  <% end %>
+                            </div>
+                            <br>           
+                            <a href="#nav-main" class="btn btn-secondary-outline btn-sm" role="button">↓</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>  
+</div>
+
+<br class="clear" />
+</div>
+</div>
+</body>
+</html>

@@ -13,6 +13,8 @@
 //= require rails-ujs
 //= require jquery3
 //= require popper
+//= require ckeditor/init
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+//= require froala_editor.min.js
